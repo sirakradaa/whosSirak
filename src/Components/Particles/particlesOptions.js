@@ -1,12 +1,3 @@
-/*
-   Copyright (C), 2023-2024, Sara Echeverria (bl33h)
-   Author: Sara Echeverria
-   FileName: particleOptions.js
-   Version: I
-   Creation: 02/06/2023
-   Last modification: 02/06/2023
-*/
-
 export const heroOptions = {
   autoPlay: true,
 
@@ -19,62 +10,62 @@ export const heroOptions = {
   fpsLimit: 120,
 
   interactivity: {
-    detectsOn: '#hero',
+    detectsOn: "#hero",
     events: {
       onDiv: [
         {
-          selectors: '#repulse-div',
+          selectors: "#repulse-div",
           enable: true,
-          mode: 'bounce',
-          type: 'circle',
+          mode: "bounce",
+          type: "circle",
         },
         {
-          selectors: '#repulse-div',
+          selectors: "#repulse-div",
           enable: true,
-          mode: 'repulse',
-          type: 'circle',
+          mode: "repulse",
+          type: "circle",
         },
         {
-          selectors: '#repulse-span',
+          selectors: "#repulse-span",
           enable: true,
-          mode: 'repulse',
-          type: 'circle',
+          mode: "repulse",
+          type: "circle",
         },
         {
-          selectors: '#repulse-span',
+          selectors: "#repulse-span",
           enable: true,
-          mode: 'bounce',
-          type: 'circle',
+          mode: "bounce",
+          type: "circle",
         },
         {
-          selectors: '#togglebutton',
+          selectors: "#togglebutton",
           enable: true,
-          mode: 'repulse',
-          type: 'circle',
+          mode: "repulse",
+          type: "circle",
         },
         {
-          selectors: '#togglebutton',
+          selectors: "#togglebutton",
           enable: true,
-          mode: 'bounce',
-          type: 'circle',
+          mode: "bounce",
+          type: "circle",
         },
         {
-          selectors: '#scroller',
+          selectors: "#scroller",
           enable: true,
-          mode: 'repulse',
-          type: 'circle',
+          mode: "repulse",
+          type: "circle",
         },
         {
-          selectors: '#scroller',
+          selectors: "#scroller",
           enable: true,
-          mode: 'bounce',
-          type: 'circle',
+          mode: "bounce",
+          type: "circle",
         },
       ],
 
       onHover: {
         enable: true,
-        mode: 'bubble',
+        mode: "bubble",
         parallax: {
           enable: true,
           force: 350,
@@ -96,7 +87,7 @@ export const heroOptions = {
         duration: 0.4,
         size: 40,
         color: {
-          value: '#cbbde5',
+          value: "#EEF5FF",
         },
         opacity: 8,
         mix: false,
@@ -114,10 +105,10 @@ export const heroOptions = {
   particles: {
     collisions: {
       enable: true,
-      mode: 'bounce',
+      mode: "bounce",
     },
     color: {
-      value: '#fff',
+      value: "#EEF5FF",
     },
     move: {
       angle: {
@@ -127,16 +118,16 @@ export const heroOptions = {
       center: {
         x: 50,
         y: 50,
-        mode: 'percent',
+        mode: "percent",
         radius: 0,
       },
-      direction: ['top-left', 'bottom-left', 'bottom-right', 'top-right'],
+      direction: ["top-left", "bottom-left", "bottom-right", "top-right"],
       drift: 0,
       enable: true,
       random: false,
       size: false,
       speed: 0.8,
-      outMode: 'bounce',
+      outMode: "bounce",
     },
     number: {
       limit: 0,
@@ -156,41 +147,85 @@ export const heroOptions = {
         speed: 0.2,
         decay: 0,
         sync: true,
-        destroy: 'none',
-        startValue: 'random',
+        destroy: "none",
+        startValue: "random",
       },
     },
 
     shape: {
-      type: 'character',
+      type: "character",
       character: [
+        // Git Icon
         {
           fill: true,
-          font: 'Font Awesome 6 Brands',
-          style: '',
-          value: ['\uf13b'],
-          weight: '400',
+          font: "Font Awesome 6 Brands",
+          style: "",
+          value: ["\uf1d3"],
+          weight: "400",
         },
+        // Jira Icon
         {
           fill: true,
-          font: 'Font Awesome 6 Brands',
-          style: '',
-          value: ['\uf38b'],
-          weight: '400',
+          font: "Font Awesome 6 Brands",
+          style: "",
+          value: ["\uf7b1"],
+          weight: "400",
         },
+        // AWS Icon
         {
           fill: true,
-          font: 'Font Awesome 6 Brands',
-          style: '',
-          value: ['\uf3b9'],
-          weight: '400',
+          font: "Font Awesome 6 Brands",
+          style: "",
+          value: ["\uf375"],
+          weight: "400",
         },
+        // Bootstrap Icon
         {
           fill: true,
-          font: 'Font Awesome 6 Brands',
-          style: '',
-          value: ['\uf41b'],
-          weight: '400',
+          font: "Font Awesome 6 Brands",
+          style: "",
+          value: ["\uf836"],
+          weight: "400",
+        },
+        // Node.js Icon
+        {
+          fill: true,
+          font: "Font Awesome 6 Brands",
+          style: "",
+          value: ["\uf419"],
+          weight: "400",
+        },
+        // React Icon
+        {
+          fill: true,
+          font: "Font Awesome 6 Brands",
+          style: "",
+          value: ["\uf41b"],
+          weight: "400",
+        },
+        // Java Icon
+        {
+          fill: true,
+          font: "Font Awesome 6 Brands",
+          style: "",
+          value: ["\uf4e4"],
+          weight: "400",
+        },
+        // Javascript Icon
+        {
+          fill: true,
+          font: "Font Awesome 6 Brands",
+          style: "",
+          value: ["\uf3b9"],
+          weight: "400",
+        },
+        // Python Icon
+        {
+          fill: true,
+          font: "Font Awesome 6 Brands",
+          style: "",
+          value: ["\uf3e2"],
+          weight: "400",
         },
       ],
     },
@@ -207,15 +242,15 @@ export const heroOptions = {
         speed: 0.2,
         decay: 0,
         sync: true,
-        destroy: 'none',
-        startValue: 'random',
+        destroy: "none",
+        startValue: "random",
       },
     },
 
     lineLinked: {
       blink: false,
       color: {
-        value: '#ffffff',
+        value: "#ffffff",
       },
       consent: true,
       distance: 100,

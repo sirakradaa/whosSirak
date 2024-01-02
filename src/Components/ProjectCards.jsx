@@ -1,14 +1,5 @@
-/*
-   Copyright (C), 2023-2024, Sara Echeverria (bl33h)
-   Author: Sara Echeverria
-   FileName: ProjectCards.jsx
-   Version: I
-   Creation: 02/06/2023
-   Last modification: 03/06/2023
-*/
-
 import { motion } from "framer-motion";
-import { styles } from '../styles'
+import { styles } from "../styles";
 import { projects } from "../Constants/constants";
 import { Tilt } from "react-tilt";
 import { githubIcon } from "../assets";
@@ -102,106 +93,103 @@ export const slideIn = (direction, type, delay, duration) => {
   };
 };
 
-const SectionWrapper = (Component, idName) => 
+const SectionWrapper = (Component, idName) =>
   function HOC() {
     return (
       <motion.section
         variants={staggerContainer()}
-        initial='hidden'
-        whileInView='show'
+        initial="hidden"
+        whileInView="show"
         viewport={{ once: true, amount: 0.25 }}
         className={`${styles.padding} max-w-7xl mx-auto relative z-0 my-[-17%] w-[500%]`}
         style={{ marginLeft: "-20%" }}
       >
-        <span className='hash-span' id={idName}>
+        <span className="hash-span" id={idName}>
           &nbsp;
         </span>
         <Component />
       </motion.section>
-    )
+    );
   };
 
-  const ProjectCard = ({ index, name, description, tags, image, source_code_link, demo_link }) => {
-    return (
-      <motion.div
-        variants={fadeIn('up', 'spring', index * 0.5, 0.75)}
+const ProjectCard = ({
+  index,
+  name,
+  description,
+  tags,
+  image,
+  source_code_link,
+  demo_link,
+}) => {
+  return (
+    <motion.div
+      variants={fadeIn("up", "spring", index * 0.5, 0.75)}
+      className="flex flex-col items-center overflow:scroll position: relative"
+    >
+      <Tilt
+        options={{
+          max: 40,
+          scale: 1,
+          speed: 450,
+        }}
+        className="text-grayscale-50 p-5 rounded-lg sm:w-[280px] w-full"
+        style={{ marginTop: "-120%" }}
       >
-        <Tilt
-          options={{
-            max: 40,
-            scale: 1,
-            speed: 450
-          }}
-          className='text-grayscale-50 p-5 rounded-lg sm:w-[280px] w-full'
-          style={{ marginTop: '-120%' }}
-          >
-          <div
-            className="relative w-full h-[180px]"
-          >
-            <img 
-              src={image}
-              alt={name}
-              className="w-full h-full object-cover rounded-lg"
-            />
+        <div className="relative w-full h-[180px]">
+          <img
+            src={image}
+            alt={name}
+            className="w-full h-full object-cover rounded-lg"
+          />
+          <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
             <div
-              className="absolute inset-0 flex justify-end m-3 card-img_hover"
+              onClick={() => window.open(source_code_link, "_blank")}
+              className="black-gradient w-8 h-8 rounded-full flex justify-center items-center cursor-pointer"
             >
-              <div
-                onClick={() => window.open
-                (source_code_link, "_blank")}
-                className="black-gradient w-8 h-8 rounded-full flex justify-center items-center cursor-pointer"
-              >
-               <img 
+              <img
                 src={githubIcon}
                 alt="github"
                 className="w-15 h-15 object-contain"
-                />
-              </div>
+              />
             </div>
           </div>
-  
-          <div className="mt-3">
-            <h3 className="text-white font-bold text-[20px]">{name}</h3>
-            <p className="mt-2 text-secondary text-[14px] leading-[18px]">{description}</p>
-          </div>
-          <div
-            className="mt-2 flex flex-wrap gap-1"
+        </div>
+
+        <div className="mt-3">
+          <h3 className="text-white font-bold text-[20px]">{name}</h3>
+          <p className="mt-2 text-secondary text-[14px] leading-[18px]">
+            {description}
+          </p>
+        </div>
+        <div className="mt-2 flex flex-wrap gap-1"></div>
+        <div className="mt-3 flex justify-center items-center">
+          <a
+            className="shadow-md shadow-primary m-3 p-2 bg-tertiary w-[60%] rounded-lg flex justify-center"
+            href={demo_link}
+            target="_blank"
           >
-          </div>
-          <div 
-            className="mt-3 flex justify-center items-center"
-          >
-            <a 
-              className="shadow-md shadow-primary m-3 p-2 bg-tertiary w-[60%] rounded-lg flex justify-center"
-              href={demo_link}
-              target='_blank'
-            >
-              See the Demo
-            </a>
-          </div>
-        </Tilt>
-      </motion.div>
-    )
-  }  
+            {console.log("name", name)}
+            {name === "Arrival" ? "See the Wiki" : "See the Demo"}
+          </a>
+        </div>
+      </Tilt>
+    </motion.div>
+  );
+};
 
 const Works = () => {
   return (
     <>
       <div className="w-full flex">
         <motion.p
-          variants={fadeIn('', '', 0.1, 1)}
-          className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
-        >
-        </motion.p>
+          variants={fadeIn("", "", 0.1, 1)}
+          className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
+        ></motion.p>
       </div>
 
       <div className="mt-20 flex flex-wrap gap-7">
         {projects.map((project, index) => (
-          <ProjectCard 
-            key={`project-${index}`}
-            index={index}
-            {...project}
-          />
+          <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
       </div>
     </>

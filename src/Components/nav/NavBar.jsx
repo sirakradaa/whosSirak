@@ -1,21 +1,23 @@
-/*
-   Copyright (C), 2023-2024, Sara Echeverria (bl33h)
-   Author: Sara Echeverria
-   FileName: NavBar.jsx
-   Version: I
-   Creation: 02/06/2023
-   Last modification: 02/06/2023
-*/
-
-import React, {useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import {styles} from '../../styles.js';
+import { styles } from "../../styles.js";
 import { navLinks } from "../../Constants/constants";
-import { bl33hIcon, menu, close } from "../../assets";
+import { menu, close } from "../../assets";
+import FileSaver from "file-saver";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
+
+  const saveFile = () => {
+    // var blob = new Blob(["Hello, world!"], {
+    //   type: "text/plain;charset=utf-8",
+    // });
+    FileSaver.saveAs(
+      "https://drive.google.com/uc?id=1uMtOe0tqz1JXNiPkakFwiRrCFR05Bulq&export=download",
+      "Sirak Radaa Resume.pdf"
+    );
+  };
 
   return (
     <nav
@@ -33,11 +35,21 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={bl33hIcon} alt={bl33hIcon} className="w-18 h-9 object-contain" />
-          <p className="text-white text-[18px] font-bold cursor-pointer flex">
-          </p>
+          <button
+            className={
+              "text-whitehover:text-white text-[18px] font-medium cursor-pointer"
+            }
+            style={{ color: "#EEF5FF" }}
+            onClick={saveFile}
+          >
+            Resume
+          </button>
+          <p className="text-white text-[18px] font-bold cursor-pointer flex"></p>
         </Link>
-        <ul className="list-none hidden sm:flex flex-row gap-10"  style={{ color: '#FFFFFF' }}>
+        <ul
+          className="list-none hidden sm:flex flex-row gap-10"
+          style={{ color: "#EEF5FF" }}
+        >
           {navLinks.map((link) => {
             return (
               <li
@@ -54,7 +66,7 @@ const Navbar = () => {
         </ul>
         <div className="sm:hidden flex flex-1 justify-end items-center">
           <img
-            className="w-[28ox] h-[28px] pbject-contain cursor-pointer z-20 " 
+            className="w-[28ox] h-[28px] pbject-contain cursor-pointer z-20 "
             onClick={() => setToggle(!toggle)}
             src={toggle ? close : menu}
             alt={menu}

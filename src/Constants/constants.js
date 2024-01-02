@@ -1,13 +1,4 @@
-/*
-   Copyright (C), 2023-2024, Sara Echeverria (bl33h)
-   Author: Sara Echeverria
-   FileName: constants.js
-   Version: I
-   Creation: 02/06/2023
-   Last modification: 18/12/2023
-*/
-
-import { library } from '@fortawesome/fontawesome-svg-core';
+import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faX,
   faBars,
@@ -15,12 +6,12 @@ import {
   faBagShopping,
   faDiceD6,
   faEnvelope,
-} from '@fortawesome/free-solid-svg-icons';
+} from "@fortawesome/free-solid-svg-icons";
 import {
   faReact,
   faGithub,
   faLinkedin,
-} from '@fortawesome/free-brands-svg-icons';
+} from "@fortawesome/free-brands-svg-icons";
 
 import {
   htmlIcon,
@@ -28,9 +19,12 @@ import {
   jsIcon,
   reactIcon,
   awsIcon,
+  ibmIcon,
   javaIcon,
+  sqlIcon,
   gitIcon,
   githubIcon,
+  gitlabIcon,
   psqlIcon,
   eslintIcon,
   pyIcon,
@@ -39,11 +33,11 @@ import {
   raspIcon,
   neoIcon,
   figmaIcon,
-  pawsitivePrototype,
-  calculator,
-  memoryGame,
+  bug,
+  arrival,
+  interestCalculator,
   avatar,
-} from '../assets';
+} from "../assets";
 
 library.add(faX, faBars, faWindowRestore, faBagShopping, faDiceD6);
 
@@ -81,55 +75,63 @@ const icons = {
 
 const introduction = {
   text: [
-    "Hello there, I'm so happy you are here! (:",
+    "Welcome to my site, thanks for taking a look",
 
-		"My name is Sara, I'm 21 and a junior computer science student based in Guatemala. I have a strong passion for the technologies related to the data base construction and UX.",
-    "Outside of my regular activities, I'm into drawing whenever I have some free time. I'm also a huge dog lover and enjoy playing chess for fun.",
+    "Hello! I'm Sirak Radaa, a junior software developer with a curious mindset and a knack for tackling challenges. From early coding explorations to managing intricate projects, I've developed a versatile set of skills. What sets me apart is my dedication to fostering creativity and my enthusiasm for continuous learning and growth.",
+    "Currently on the lookout for fresh opportunities, I bring a blend of technical proficiency and a fearless approach to problem-solving. I thrive in dynamic environments, where I can contribute my skills to build scalable applications and collaborate on innovative projects. Ready to bring enthusiasm and dedication to a new team, I'm excited about the possibilities ahead.",
 
-    "I'm continuously thrilled to partner with individuals and teams who wholeheartedly embrace my fervor for crafting extraordinary experiences. Your visit to my portfolio is deeply appreciated !",
+    "Thanks for learning about me! I'm a junior software developer with a passion for challenges and creative problem-solving. Let's connect if you're looking for someone enthusiastic about continuous learning and ready to contribute to innovative projects.",
   ],
 };
 
 export const navLinks = [
   {
-    id: 'about',
-    title: 'About',
+    id: "",
+    title: "Home",
   },
   {
-    id: 'projects',
-    title: 'Projects',
+    id: "about",
+    title: "About",
   },
   {
-    id: 'skills',
-    title: 'Skills',
+    id: "projects",
+    title: "Projects",
   },
   {
-    id: 'contact',
-    title: 'Contact',
+    id: "skills",
+    title: "Skills",
+  },
+  {
+    id: "contact",
+    title: "Contact",
   },
 ];
 
 const projects = [
   {
-    name: "Arasartara's Gallery",
-    description: 'A memory game with an art theme implemented with React. Test your memory skills and enjoy beautiful artwork as you match pairs of cards in this engaging game.',
-    image: memoryGame,
-    source_code_link: 'https://github.com/bl33h/artMemoryGame',
-    demo_link: 'https://arasarmemory.netlify.app/',
+    name: "Arrival",
+    description:
+      "Arrival is an Edmonton-based ride sharing platform for Android. Users can sign up as a Rider, or Driver, depending on their needs. More information about the app's features and development can be found on the project's Wiki.",
+    image: arrival,
+    source_code_link:
+      "https://github.com/CMPUT301W20T07/arrival?tab=readme-ov-file",
+    demo_link: "https://github.com/CMPUT301W20T07/arrival/wiki",
   },
   {
-    name: 'Pawsitive',
-    description: 'Explore a user-friendly Figma prototype for an adoption and sterilization awareness website. Experience the sleek design and contribute to a noble cause.',
-    image: pawsitivePrototype,
-    source_code_link: 'https://github.com/bl33h/pawsitive',
-    demo_link: 'https://www.figma.com/proto/zhK8DMa7uPyQIcHxkemIcx/Pawsitive?type=design&node-id=40-2&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=40%3A2',
+    name: "BugTracker",
+    description:
+      "Explore a user-friendly Figma prototype for an adoption and sterilization awareness website. Experience the sleek design and contribute to a noble cause.",
+    image: bug,
+    source_code_link: "https://github.com/sirakradaa/BugTracker",
+    demo_link: "https://sirakradaa.github.io/BugTracker/",
   },
   {
-    name: 'Basic Calculator',
-    description: 'A completely functional basic calculator website created with React. It allows you to perform mathematical calculations effortlessly. With testing implemented, the results are accurate.',
-    image: calculator,
-    source_code_link: 'https://github.com/bl33h/calculator',
-    demo_link: 'https://bl33hscalculator.netlify.app/',
+    name: "InterestCalculator",
+    description:
+      "Explore a user-friendly Figma prototype for an adoption and sterilization awareness website. Experience the sleek design and contribute to a noble cause.",
+    image: interestCalculator,
+    source_code_link: "https://github.com/sirakradaa/Interest",
+    demo_link: "https://sirakradaa.github.io/Interest/",
   },
 ];
 
@@ -139,116 +141,109 @@ const memoji = {
 
 const skills = [
   {
-    id: 'html',
-    title: 'HTML',
+    id: "html",
+    title: "HTML",
     icon: htmlIcon,
     description:
-      'I have a strong command of HTML for organizing web pages and generating meaningful content that can be accessed by all users.',
+      "(2 years experience, 1.5 years professional) I began using HTML in 2021 during an IBM cloud certification. Since then I have also used it in a professional setting and for personal projects. HTML has given me a strong understanding of page layout.",
   },
   {
-    id: 'css',
-    title: 'CSS',
+    id: "css",
+    title: "CSS",
     icon: cssIcon,
     description:
-    'I possess expertise in utilizing CSS to design web pages and craft visually captivating layouts that enhance the overall user experience.',
+      "(2 years experience, 1.5 years professional) I began using CSS in 2021 during an IBM cloud certification. Since then I have also used it in a professional setting and for personal projects. My insight on page design expanded with learning proper CSS usage.",
   },
   {
-    id: 'javascript',
-    title: 'JavaScript',
-    icon: jsIcon,
-    description:
-    'I have substantial experience in employing JavaScript to introduce interactivity and functionality into web pages, resulting in dynamic user interfaces.',
-  },
-  {
-    id: 'react',
-    title: 'React',
+    id: "react",
+    title: "React",
     icon: reactIcon,
     description:
-      'I am well-versed in React, proficient in creating reusable components and managing application state using hooks and context.',
+      "(2 years experience, 1.5 years professional) I have genuine fun developing pages using React. Some libraries just click with certain people, this is the one that clicked with me. It's easy to use and debug.",
   },
   {
-    id: 'java',
-    title: 'Java',
+    id: "java",
+    title: "Java",
     icon: javaIcon,
     description:
-      'I have extensive experience utilizing Java for object-oriented programming (OOP) and implementing data structures.',
+      "(4 years experience, 0 years professional) Java was the first language that I used to build a big project in a team. It gave me a deep understanding of OOP. That project taught me how to compartmentalize code properly.",
   },
   {
-    id: 'aws',
-    title: 'Amazon Web Services',
+    id: "javascript",
+    title: "JavaScript",
+    icon: jsIcon,
+    description:
+      "(2 years experience, 1.5 years professional) I began using JavaScript in 2021 during an IBM cloud certification. Since then I have also used it in a professional setting and for personal projects. It is now my primary language and the one I currently use the most.",
+  },
+  {
+    id: "ibm",
+    title: "IBM Cloud",
+    icon: ibmIcon,
+    description:
+      "(1 years experience, 0 years professional) I have earned multiple IBM Cloud certifications. This was the first cloud provider that I used, it was a good entry point into learning how cloud infrastructure is made, scaled, and maintained securely.",
+  },
+  {
+    id: "aws",
+    title: "Amazon Web Services",
     icon: awsIcon,
     description:
-      'I am certified in AWS and proficient in working with EC2 and RDS instances, leveraging the power of cloud computing for scalable and reliable infrastructure.',
+      "(0 years experience, 0 years professional) AWS has given me a deeper understanding of automation in cloud environments. I am currently prepping for the AWS Certified Developer Certification, I am in the process of reviewing the topics before taking the exam.",
   },
   {
-    id: 'figma',
-    title: 'Figma',
+    id: "figma",
+    title: "Figma",
     icon: figmaIcon,
     description:
-    'In my Figma skills, I unleash creativity, designing captivating user interfaces and collaborating seamlessly with designers and developers.',
+      "(2 years experience, 0 years professional) I began using Figma as a way to create my resume. Since then I realized it's the easiest way to update and maintain the things I am working on. Figma does a good job at giving the user enough options to explore their creativity.",
   },
   {
-    id: 'git',
-    title: 'Git',
+    id: "git",
+    title: "Git",
     icon: gitIcon,
     description:
-    'I am proficient in Git, managing code changes, collaborating with others, and resolving conflicts effectively.',
+      "(4 years experience, 1.5 years professional) I am very experience at Git, I began using it in school to work on projects and since then have been using it in a professional setting to collaborate, review, and solve conflicts.",
   },
   {
-    id: 'github',
-    title: 'GitHub',
+    id: "github",
+    title: "GitHub",
     icon: githubIcon,
     description:
-      'I am skilled in using GitHub for seamless project collaboration, code sharing, and issue tracking. Through GitHub, I efficiently create and manage repositories and effectively present my work to potential employers.',
+      "(4 years experience, 0 years professional) Github is the first Git platform that I used. It is the one I will be using for my personal projects because it maintains all the stuff I have already worked on.",
   },
   {
-    id: 'psql',
-    title: 'Postgresql',
-    icon: psqlIcon,
+    id: "gitlab",
+    title: "GitLab",
+    icon: gitlabIcon,
     description:
-      'I have a strong command of PostgreSQL, encompassing a wide range of skills such as database normalization, triggers, front-end connectivity, and data analysis using software like Power BI.',
+      "(1 years experience, 1.5 years professional) GitLab is the Git platform I use at my current job. It's easy to maneuver, and has helped me in creating production-ready code.",
   },
   {
-    id: 'vite',
-    title: 'Vite',
-    icon: viteIcon,
+    id: "sql",
+    title: "SQL",
+    icon: sqlIcon,
     description:
-      'I have gained considerable experience working with Vite for approximately six months, leveraging its capabilities to build React websites and seamlessly deploy them on platforms like Netlify.',
+      "(5 years experience, 0 years professional) SQL allowed me to understand dataflow, organization, tables, queries, and most of all security. Realizing just how powerful data can be, while also being extremely sensitive was more than interesting.",
   },
   {
-    id: 'py',
-    title: 'Python',
+    id: "py",
+    title: "Python",
     icon: pyIcon,
     description:
-      'With 3 years of Python experience, I am adept at coding functions and creating graphic interfaces using Tkinter.',
+      "(5 years experience, 0 years professional) Python was my first coding language, it is the language I tend to default to because it is easy for me to use, understand, and debug.",
   },
   {
-    id: 'node',
-    title: 'Node',
+    id: "node",
+    title: "Node",
     icon: nodeIcon,
     description:
-      'When it comes to building web applications, I prefer using Node as my runtime environment over Yarn. I have expertise in leveraging Node.js to develop powerful and scalable web applications.',
+      "(2 years experience, 1.5 years professional) Node is the runtime environment that helped grasp the function, usage, and importance of a backend that is maintained well. Especially using it in a professional setting.",
   },
   {
-    id: 'neo',
-    title: 'Neo4j',
-    icon: neoIcon,
-    description:
-      'I am knowledgeable in Neo4j, the graph database management system. I have expertise in utilizing GraphOS to build robust recommendation systems, leveraging the strength of graph-based data modeling.',
-  },
-  {
-    id: 'raspi',
-    title: 'Raspberry Pi',
-    icon: raspIcon,
-    description:
-      'I have hands-on experience with Raspberry Pi, where I utilized a virtual Linux machine to execute programs written in assembly language. This allowed me to explore low-level computing and develop efficient code for the Raspberry Pi platform.',
-  },
-  {
-    id: 'eslint',
-    title: 'Eslint',
+    id: "eslint",
+    title: "Eslint",
     icon: eslintIcon,
     description:
-      'I utilize ESLint to identify and resolve code issues, as well as standardize the structure of my projects. With ESLint, I ensure code quality and consistency throughout my development process.',
+      "(1.5 years experience, 1.5 years professional) ESLint has been incredible in keeping me from commiting mistakes, which also made me increase the quality and consistency of my code.",
   },
 ];
 
@@ -257,12 +252,4 @@ const markerSvg = `<svg viewBox="-4 0 36 36">
     <circle fill="black" cx="14" cy="14" r="7"></circle>
   </svg>`;
 
-export {
-  media,
-  introduction,
-  projects,
-  memoji,
-  skills,
-  markerSvg,
-  icons,
-};
+export { media, introduction, projects, memoji, skills, markerSvg, icons };
